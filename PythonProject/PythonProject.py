@@ -9,7 +9,8 @@ def printList(title, lst):
 
 Origin = [ Circle(), Rectangle(), Circle(2.0), Rectangle(2.0, 1.0) ]
 printList("--- The origin list of figures", Origin)
-# Copy = Origin[:] 
+# Copy = Origin[:]
+# Copy = list(copy.copy(fig) for fig in Origin)
 Copy = copy.deepcopy(Origin)
 for fig in Copy:
     fig.scalingBy(2.0)
