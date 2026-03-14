@@ -12,36 +12,18 @@ namespace CSharpProject
     class Circle : Figure
     {
         private double radius;
-        public Circle()
-        {
-            radius = 1.0;
-        }
-        public Circle(double r)
-        {
-            radius = r > 0.0 ? r : 0.1;
-        }
-        public override double area()
-        {
-            return Math.PI * radius * radius;
-        }
-        public override double perimeter()
-        {
-            return 2.0 * Math.PI * radius;
-        }
+        public Circle() => radius = 1.0;
+        public Circle(double r) => radius = r > 0.0 ? r : 0.1;
+        public override double area() => Math.PI * radius * radius;
+        public override double perimeter() => 2.0 * Math.PI * radius;
         public override Circle scalingBy(double coef)
         {
             if (coef <= 0.0) coef = 0.1;
             radius *= coef;
             return this;
         }
-        public override Circle Clone()
-        {
-            return new Circle(this.radius);
-        }
-        public override string ToString()
-        {
-            return $"Circle({radius})";
-        }
+        public override Circle Clone() => new Circle(this.radius);
+        public override string ToString() => $"Circle({radius})";
     }
     class Rectangle : Figure
     {
@@ -56,14 +38,8 @@ namespace CSharpProject
             length = a > 0.0 ? a : 0.1;
             width = b > 0.0 ? b : 0.1;
         }
-        public override double area()
-        {
-            return length * width;
-        }
-        public override double perimeter()
-        {
-            return 2.0 * (length + width);
-        }
+        public override double area() => length * width;
+        public override double perimeter() => 2.0 * (length + width);
         public override Rectangle scalingBy(double coef)
         {
             if (coef <= 0.0) coef = 0.1;
@@ -71,13 +47,7 @@ namespace CSharpProject
             width *= coef;
             return this;
         }
-        public override Rectangle Clone()
-        {
-            return new Rectangle(this.length, this.width);
-        }
-        public override string ToString()
-        {
-            return $"Rectangle[{length}x{width}]";
-        }
+        public override Rectangle Clone() => new Rectangle(this.length, this.width);
+        public override string ToString() => $"Rectangle[{length}x{width}]";
     }
 }
