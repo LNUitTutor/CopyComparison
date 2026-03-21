@@ -1,15 +1,15 @@
 #pragma once
 #define _USE_MATH_DEFINES
 #include <iostream>
-class Figure abstract
+class Figure
 {
 public:
 	virtual ~Figure() { }
-	virtual double area() const abstract;
-	virtual double perimeter() const abstract;
-	virtual void printOn(std::ostream& os) const abstract;
-	virtual Figure& scalingBy(double coef) abstract;
-	virtual Figure* clone() const abstract;
+	virtual double area() const = 0;
+	virtual double perimeter() const = 0;
+	virtual void printOn(std::ostream& os) const = 0;
+	virtual Figure& scalingBy(double coef) = 0;
+	virtual Figure* clone() const = 0;
 };
 std::ostream& operator<<(std::ostream& os, const Figure& fig);
 
